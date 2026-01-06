@@ -41,3 +41,5 @@ jobs:
             - uses: actions/deploy-pages@v4
               id: deployment
               name: Deploy to 'Github Pages'
+
+            - run: 'echo "Deployment url: ${{ steps.deployment.outputs.page_url }}"'
