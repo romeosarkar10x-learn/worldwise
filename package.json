@@ -3,6 +3,10 @@
     "private": true,
     "version": "0.0.0",
     "type": "module",
+    "repository": {
+        "url": "https://github.com/romeosarkar10x-learn/world-wise.git",
+        "type": "git"
+    },
     "scripts": {
         "dev": "vite",
         "type-check": "tsc -p tsconfig.app.json",
