@@ -14,5 +14,10 @@
     },
     "assist": {
         "enabled": false
+    },
+    "html": {
+        "formatter": {
+            "enabled": true
+        }
     }
 }
