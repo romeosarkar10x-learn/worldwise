@@ -10,6 +10,12 @@ export default defineConfig({
         outDir: "dist",
     },
     base: "./",
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, "src"),
+            "%": __dirname,
+        },
+    },
 });
 
 function copy404HTMLVitePlugin(): Plugin {

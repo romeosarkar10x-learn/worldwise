@@ -4,10 +4,13 @@ import Product from "./pages/product";
 import Home from "./pages/home";
 import Pricing from "./pages/pricing";
 import getRepoName from "./utils/getRepoName";
+import { getPackageJSON } from "./utils/getPackageJSON";
 
 function App() {
+    const base = `/${getRepoName(getPackageJSON().repository.url)}`;
+
     return (
-        <BrowserRouter basename={`/${getRepoName()}`}>
+        <BrowserRouter basename={base}>
             <Routes>
                 <Route path="home" element={<Home />}></Route>
                 <Route path="product" element={<Product />}></Route>

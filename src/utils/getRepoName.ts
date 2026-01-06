@@ -1,19 +1,11 @@
-import { repository } from "../../package.json";
+import gh from "parse-github-url";
 
-export default function getRepoName() {
-    const url = URL.parse(repository.url);
+export default function getRepoName(repositoryURL: string) {
+    const githubURL = gh(repositoryURL);
 
-    if (url === null) {
-        console.error("Failed to parse repo name");
+    if (githubURL == null || githubURL.name == null) {
         return "worldwise";
     }
 
-    const arr = url.pathname.split("/");
-
-    if (arr.length !== 3) {
-        console.error("Failed to parse repo name");
-        return "worldwise";
-    }
-
-    return arr[2];
+    return githubURL.name;
 }
