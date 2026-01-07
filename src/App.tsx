@@ -3,11 +3,10 @@ import "./App.css";
 import Product from "./pages/product";
 import Home from "./pages/home";
 import Pricing from "./pages/pricing";
-import getRepoName from "./utils/getRepoName";
-import { getPackageJSON } from "./utils/getPackageJSON";
+import getProjectName from "./utils/getProjectName";
 
 function App() {
-    const base = `/${getRepoName(getPackageJSON().repository.url)}`;
+    const base = `/${getProjectName()}`;
 
     return (
         <BrowserRouter basename={base}>
