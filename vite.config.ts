@@ -1,11 +1,16 @@
 import { defineConfig, type Plugin, type ResolvedConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react-swc";
 import fs from "node:fs";
 import path from "node:path";
 
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [react(), copy404HTMLVitePlugin()],
+    plugins: [
+        react(),
+        tailwindcss({ optimize: { minify: true } }),
+        copy404HTMLVitePlugin(),
+    ],
     build: {
         outDir: "dist",
     },
