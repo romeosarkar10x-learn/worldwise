@@ -1,16 +1,16 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 export default function PageNav() {
     return (
         <ul className="flex gap-[1.5em] list-none">
             <li>
-                <Link to="/">Home</Link>{" "}
+                <NavLink to="/">Home</NavLink>{" "}
             </li>
             <li>
-                <Link to="/product">Product</Link>{" "}
+                <NavLink to="/product">Product</NavLink>{" "}
             </li>
             <li>
-                <Link to="/pricing">Pricing</Link>{" "}
+                <NavLink to="/pricing">Pricing</NavLink>{" "}
             </li>
         </ul>
     );

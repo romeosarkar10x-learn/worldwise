@@ -4,3 +4,10 @@
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 /* @import "tailwind/preflight.css" layer(base); */
+
+
+@layer base {
+    .active {
+        background-color: rgb(199 190 228);
+    }
+}
