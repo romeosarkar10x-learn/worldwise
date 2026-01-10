@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
-import Product from "./pages/product";
-import Home from "./pages/home";
-import Pricing from "./pages/pricing";
-// import getProjectName from "./utils/getProjectName";
-import NotFound from "./pages/notFound";
+import Homepage from "./pages/HomePage";
+import Product from "./pages/Product";
+import Pricing from "./pages/Pricing";
+import PageNotFound from "./pages/PageNotFound";
+import Login from "./pages/Login";
+import AppLayout from "./pages/AppLayout";
 
 function App() {
     // const base = `/${getProjectName()}`;
@@ -12,10 +13,16 @@ function App() {
     return (
         <BrowserRouter basename={"/"}>
             <Routes>
-                <Route path="/" element={<Home />}></Route>
-                <Route path="product" element={<Product />} />
-                <Route path="pricing" element={<Pricing />} />
-                <Route path="*" element={<NotFound />} />
+                <Route path="/" element={<Homepage />}></Route>
+                <Route path="app" element={<AppLayout />}>
+                    <Route path="cities" element={<p>List of cities</p>} />
+                    <Route path="countries" element={<p>Countries</p>} />
+                    <Route path="form" element={<p>Form</p>} />
+                </Route>
+                <Route path="/login" element={<Login />} />
+                <Route path="/product" element={<Product />} />
+                <Route path="/pricing" element={<Pricing />} />
+                <Route path="*" element={<PageNotFound />} />
             </Routes>
         </BrowserRouter>
     );

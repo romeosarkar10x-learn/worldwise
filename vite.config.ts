@@ -6,11 +6,7 @@ import path from "node:path";
 
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [
-        react(),
-        tailwindcss({ optimize: { minify: true } }),
-        copy404HTMLVitePlugin(),
-    ],
+    plugins: [react(), tailwindcss({ optimize: { minify: true } }), copy404HTMLVitePlugin()],
     build: {
         outDir: "dist",
     },
@@ -34,10 +30,7 @@ function copy404HTMLVitePlugin(): Plugin {
         closeBundle: () => {
             if (config !== undefined) {
                 const outDir = config.build.outDir;
-                fs.copyFileSync(
-                    path.join(outDir, "index.html"),
-                    path.join(outDir, "404.html"),
-                );
+                fs.copyFileSync(path.join(outDir, "index.html"), path.join(outDir, "404.html"));
             }
         },
     };
